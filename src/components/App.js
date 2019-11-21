@@ -3,10 +3,9 @@ import Projects from './Projects';
 import SocialProfiles from "./SocialProfiles";
 import profile from '../assets/self3.PNG';
 import Title from "./Title";
-import Jokes from "./Jokes";
-import FileUpload from "./FileUpload";
 
 class App extends Component {
+
     constructor() {
         super();
         this.state = {displayBio: false, displayQuote: false};
@@ -26,7 +25,6 @@ class App extends Component {
     render() {
         return (
             <div>
-                <FileUpload/>
                 <img src={profile} alt="profile" className='profile' />
                 <h1>Hello!</h1>
                 <p>My name is Elizabeth.</p>
@@ -48,8 +46,6 @@ class App extends Component {
                 <Projects  />
                 <hr/>
                 <SocialProfiles />
-                <hr/>
-                <Jokes/>
             </div>
         )
     }

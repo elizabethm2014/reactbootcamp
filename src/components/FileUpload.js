@@ -22,7 +22,7 @@ class FileUpload extends Component {
         let maxSize = 100000000; // 100 MB
         let err = '';
         let file = event.target.files[0];
-        console.log('file', file.name, 'file size =',file.size);
+        console.log('file', file.name, 'file size =', file.size);
         if (file.size > maxSize) {
             err = file.name + ' exceeds the size limit of 100MB\n';
             alert(err);
@@ -32,7 +32,7 @@ class FileUpload extends Component {
     };
 
     uploadFile = () => {
-        let  file = this.state.selectedFile;
+        let file = this.state.selectedFile;
         const formData = new FormData();
         formData.append('file', file);
         // TODO - implement upload of file
@@ -50,16 +50,18 @@ class FileUpload extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-6">
-                        <div className="form-group files">
-                            <label>Upload File </label>
-                            <input type="file" className="form-control" name="file"
-                                   onChange={this.onFileChangeHandler}/>
-                        </div>
-                        <div className="col-md-6 pull-right">
-                            <button width="100%" className="btn btn-info" onClick={this.uploadFile}>Upload</button>
+            <div>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="form-group files">
+                                <label>Upload File </label>
+                                <input type="file" className="form-control" name="file"
+                                       onChange={this.onFileChangeHandler}/>
+                            </div>
+                            <div className="col-md-6 pull-right">
+                                <button width="100%" className="btn btn-info" onClick={this.uploadFile}>Upload</button>
+                            </div>
                         </div>
                     </div>
                 </div>
